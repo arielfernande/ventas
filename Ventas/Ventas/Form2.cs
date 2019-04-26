@@ -7,24 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ventas.ClasesBL;
+using Ventas.BL;
 
 namespace Ventas
 {
     public partial class Form2 : Form
     {
-      
-
         public Form2()
         {
             InitializeComponent();
-
-            var ciudadBL = new CiudadBL();
-            listadeCiudadBindingSource.DataSource = ciudadBL.ListadeCiudad;
-
-            var clientesBL = new ClientesBL();
-            listadeCiudadBindingSource.DataSource = ciudadBL.ListadeCiudad;
         }
 
+        public void cargarDatos(ClientesBL clientesBL, CiudadBL ciudadesBL)
+        {
+            
+            listadeClientesBindingSource.DataSource = clientesBL.ListadeClientes;            
+            listadeCiudadesBindingSource.DataSource = ciudadesBL.ListadeCiudades;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

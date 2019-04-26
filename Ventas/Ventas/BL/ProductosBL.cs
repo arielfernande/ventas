@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,13 @@ namespace Ventas.BL
 {
     public class ProductosBL
     {
-        public List<Producto> ListadeProductos { get; set; }
+        public BindingList <Productos> ListadeProductos { get; set; }
 
         public ProductosBL()
         {
-            ListadeProductos = new List<Producto>();
+            ListadeProductos = new BindingList<Productos>();
             CrearDatosdePrueba();
+            
         }
 
         private void CrearDatosdePrueba()
@@ -22,13 +24,15 @@ namespace Ventas.BL
             var categoria1 = new Categoria(1, "Laptops");
             var categoria2 = new Categoria(2, "Accesorios");
 
-            var producto1 = new Producto(1, "Laptp Dell", 1500, categoria1);
-            var producto2 = new Producto(2, "Laptp Asus", 20000, categoria1);
-            var producto3 = new Producto(3, "Mause Logitech", 200, categoria2);
+            var producto1 = new Productos(1, "Laptop Lenovo", 20000, categoria1);
+            var producto2 = new Productos(2, "Laptop Toshiba", 15000, categoria1);
+            var producto3 = new Productos(3, "Teclado Acer", 500, categoria2);
 
             ListadeProductos.Add(producto1);
             ListadeProductos.Add(producto2);
             ListadeProductos.Add(producto3);
+
         }
+
     }
 }

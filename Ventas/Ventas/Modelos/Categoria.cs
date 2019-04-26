@@ -8,14 +8,21 @@ namespace Ventas.Modelos
 {
     public class Categoria
     {
-        public int Id { get; set; }
-        public string Descripcion { get; set; }
+      public int    Id          { get; set; }
+      public string Descripcion { get; set; }
 
+        public Categoria()
+        {
+
+        }
+
+        //Constructor
         public Categoria(int id, string descripcion)
         {
             Id = id;
             Descripcion = descripcion;
 
-        }
+        }  
+
     }
 }

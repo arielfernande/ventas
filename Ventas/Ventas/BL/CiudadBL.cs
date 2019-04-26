@@ -1,31 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ventas.Clientes;
+using Ventas.Modelos;
 
-namespace Ventas.ClasesBL
+namespace Ventas.BL
 {
     public class CiudadBL
     {
-        public List<Ciudad> ListadeCiudad { get; set; }
+
+        public BindingList<Ciudad>ListadeCiudades { get; set; }
 
         public CiudadBL()
         {
-            ListadeCiudad = new List<Ciudad>();
+            ListadeCiudades = new BindingList<Ciudad>();
             CrearDatosdePrueba();
         }
 
         private void CrearDatosdePrueba()
         {
-            var ciudad1 = new Ciudad(1, "S.P.S");
+            var ciudad1 = new Ciudad(1, "SPS");
             var ciudad2 = new Ciudad(2, "Progreso");
 
+            ListadeCiudades.Add(ciudad1);
+            ListadeCiudades.Add(ciudad2);
 
-            ListadeCiudad.Add(ciudad1);
-            ListadeCiudad.Add(ciudad2);
         }
+
+
+
+
     }
 }
-
